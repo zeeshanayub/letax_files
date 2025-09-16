@@ -6,10 +6,12 @@
 \usepackage{xcolor}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
-\usepackage{fontspec} % Required for \setmainfont
+% Use default LaTeX fonts (comment out fontspec for better compatibility)
+% \usepackage{fontspec}
+% \setmainfont{Times New Roman}
 
-% Set main font
-\setmainfont{Times New Roman}
+% Alternative: Use standard LaTeX fonts that look similar to Times
+\usepackage{mathptmx} % Times-like font for text and math
 
 % Header and footer setup
 \pagestyle{fancy}

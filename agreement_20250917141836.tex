@@ -1,0 +1,164 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+% Use default LaTeX fonts (comment out fontspec for better compatibility)
+% \usepackage{fontspec}
+% \setmainfont{Times New Roman}
+
+% Alternative: Use standard LaTeX fonts that look similar to Times
+\usepackage{mathptmx} % Times-like font for text and math
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+
+% Title formatting
+\titleformat{\section}{\large\bfseries}{\Roman{section}.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+
+% Custom commands for variables
+\newcommand{\ClientName}{Herschel}
+\newcommand{\AppName}{Finance health integration app}
+\newcommand{\EffectiveDate}{17-09-2025}
+\newcommand{\TimeLine}{12 weeks}
+\newcommand{\TotalCost}{0}
+\newcommand{\FeaturesListPlaceholder}{}
+\newcommand{\ScopeDescription}{Design and build a Finance health integration app.}
+
+% Milestone variables
+\newcommand{\MilestoneOne}{}
+\newcommand{\MOneCost}{0}
+\newcommand{\MOneDeliverables}{}
+
+\newcommand{\MilestoneTwo}{}
+\newcommand{\MTwoCost}{0}
+\newcommand{\MTwoDeliverables}{}
+
+\newcommand{\MilestoneThree}{}
+\newcommand{\MThreeCost}{0}
+\newcommand{\MThreeDeliverables}{}
+
+\newcommand{\MilestoneFour}{}
+\newcommand{\MFourCost}{0}
+\newcommand{\MFourDeliverables}{}
+
+\newcommand{\MilestoneFive}{}
+\newcommand{\MFiveCost}{0}
+\newcommand{\MFiveDeliverables}{}
+
+\begin{document}
+
+% Title
+\begin{center}
+\Large\textbf{Client Agreement -- \ClientName{} \AppName{} Application Development}
+\end{center}
+
+\vspace{1em}
+
+\section*{This Agreement}
+This Client Agreement (the ``Agreement'') is made and entered into as of \textbf{\EffectiveDate{}} (defined as the date of the first milestone payment), by and between \textbf{Junzi Tech Solutions LLC}, a Massachusetts corporation located at \textbf{227 Marlborough St, Apt 9, Boston, Massachusetts 02116} (``Developer''), and \textbf{\ClientName{}} (``Client'').
+
+\section{Scope of Work}
+\ScopeDescription{}
+
+\subsection*{Core features (to be tailored for each client):}
+\FeaturesListPlaceholder{}
+
+All detailed specifications, workflows, and designs will be finalized and approved by the Client during the planning phase before development proceeds.
+
+\section{Timeline}
+The project shall be completed within \textbf{\TimeLine{}} from the Effective Date. If delays exceed two weeks, a written remediation plan and adjusted schedule will be provided. If total delays exceed fourteen days beyond the agreed timeline without resolution, the Client may terminate the Agreement and receive a partial refund for undelivered milestones (net of work performed).
+
+\section{Milestone-Based Payments}
+The total project cost is \textbf{\$\TotalCost{}}, payable in the following milestones:
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{Milestone 1 -- \MilestoneOne{} (\$\MOneCost{})}\\
+Deliverables: \MOneDeliverables{}
+
+\item \textbf{Milestone 2 -- \MilestoneTwo{} (\$\MTwoCost{})}\\
+Deliverables: \MTwoDeliverables{}
+
+\item \textbf{Milestone 3 -- \MilestoneThree{} (\$\MThreeCost{})}\\
+Deliverables: \MThreeDeliverables{}
+
+\item \textbf{Milestone 4 -- \MilestoneFour{} (\$\MFourCost{})}\\
+Deliverables: \MFourDeliverables{}
+
+\item \textbf{Milestone 5 -- \MilestoneFive{} (\$\MFiveCost{})}\\
+Deliverables: \MFiveDeliverables{}
+\end{itemize}
+
+\section{Communication \& Project Management}
+\begin{itemize}[leftmargin=*]
+\item Weekly progress updates via email or call.
+\item Reasonable revisions are included per milestone; major scope changes must be documented and signed by both parties.
+\item Client agrees to provide milestone feedback within three business days of delivery to prevent timeline delays.
+\end{itemize}
+
+\section{Intellectual Property \& Confidentiality}
+\begin{itemize}[leftmargin=*]
+\item All code, designs, and materials become the Client's property upon full payment.
+\item Developer agrees to treat all project information and communications as confidential. Obligations survive termination of this Agreement.
+\end{itemize}
+
+\section{Performance Standards}
+\begin{itemize}[leftmargin=*]
+\item The application will follow modern UX, performance, and security best practices.
+\item Bugs reported within thirty days post-launch will be fixed at no cost.
+\end{itemize}
+
+\section{Termination}
+Either party may terminate this Agreement with ten days' written notice. The Client will owe payment for all completed work up to the date of termination. Upon termination, all completed deliverables will be handed over to Client provided payment is received.
+
+\section{Entire Agreement}
+This Agreement constitutes the full and complete understanding between the parties. Any amendments must be in writing and signed by both parties.
+
+\section{Liability Disclaimer}
+Developer's total liability is limited to the value of the services rendered under this Agreement. Developer is not liable for any indirect, incidental, or consequential damages arising from the use of the application.
+
+\section{Hosting \& Infrastructure}
+Unless otherwise agreed, the Client is responsible for hosting and infrastructure (for example, Firebase or AWS). Developer will assist with deployment. Hosting through Developer requires a separate hosting agreement and monthly fee.
+
+\section{Data Ownership \& Compliance}
+\begin{itemize}[leftmargin=*]
+\item Client owns all data, backend code, databases, and app IP upon full payment.
+\item Developer agrees to implement data protection best practices during development.
+\item Developer will implement e-commerce and privacy compliance measures as required (for example, GDPR, CCPA).
+\end{itemize}
+
+\section{Warranty \& Maintenance}
+\begin{itemize}[leftmargin=*]
+\item Bug fixes within 30 days of launch are included.
+\item Ongoing maintenance, upgrades, or server support are not included and require a separate agreement.
+\end{itemize}
+
+\vspace{2em}
+
+\section*{Signatures}
+
+\begin{minipage}{0.45\textwidth}
+\textbf{Developer:}\\
+Junzi Tech Solutions LLC\\
+President: Nikita Clark\\[2em]
+Signature: \rule{6cm}{0.4pt}\\[0.5em]
+Date: \rule{4cm}{0.4pt}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\textbf{Client:}\\
+\ClientName{}\\[3em]
+Signature: \rule{6cm}{0.4pt}\\[0.5em]
+Date: \rule{4cm}{0.4pt}
+\end{minipage}
+
+\end{document}
+
+

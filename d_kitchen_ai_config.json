@@ -1,0 +1,81 @@
+{
+  "intent_detection_node": {
+    "name": "Intent Detection Node - D's Kitchen",
+    "version": "2.0",
+    "description": "Updated prompt to start with neutral greeting and collect names only when required",
+    "prompts": {
+      "initial_greeting": {
+        "text": "Welcome to D's Kitchen. How can I help you today?",
+        "purpose": "Neutral, friendly greeting that doesn't assume caller intent",
+        "next_action": "listen_for_intent"
+      },
+      "returning_customer_greeting": {
+        "condition": "is_returning_customer = true AND customer_name present",
+        "text": "Welcome back, {{customer_name}}. How can I help today?",
+        "next_action": "classify_intent"
+      },
+      "name_collection": {
+        "order_placement": {
+          "text": "I'd be happy to help you place an order. Could I get your name for the order?",
+          "trigger": "intent = new_order AND customer_name missing"
+        },
+        "order_lookup": {
+          "text": "I can help you with your order. What name is the order under?",
+          "trigger": "intent in [change_order, cancel_order] AND customer_name missing"
+        },
+        "ordering_without_name": {
+          "text": "Happy to help with that—could I quickly get your name for the order?",
+          "trigger": "started_ordering = true AND customer_name missing",
+          "max_attempts": 1
+        },
+        "name_explanation": {
+          "text": "Just so I can note your order correctly.",
+          "trigger": "customer_asks_why_name_needed"
+        },
+        "name_refusal_handling": {
+          "text": "No problem, I can still help you with that.",
+          "action": "store_placeholder_name('Guest')",
+          "trigger": "customer_refuses_name"
+        }
+      },
+      "name_clarification": {
+        "text": "I just want to be sure I heard that right—was it '{{best_guess}}'?",
+        "max_attempts": 2,
+        "fallback_action": "store_placeholder_name('Guest')"
+      },
+      "intent_clarification": {
+        "text": "Just to confirm—are you looking to place a new order, ask a question about our menu, or something else?",
+        "trigger": "intent_ambiguous = true",
+        "max_attempts": 1
+      }
+    },
+    "intent_categories": [
+      "new_order",
+      "change_order", 
+      "cancel_order",
+      "general_info",
+      "complaint_upset"
+    ],
+    "flow_rules": {
+      "name_required_for": ["new_order", "change_order", "cancel_order"],
+      "name_optional_for": ["general_info", "complaint_upset"],
+      "completion_conditions": {
+        "returning_customer": ["greeting_done", "intent_identified"],
+        "new_customer": ["name_captured_or_refused", "intent_identified"]
+      }
+    },
+    "behavior_guidelines": {
+      "style": "Natural, concise, one question at a time",
+      "do_not": [
+        "Start collecting menu items at this node",
+        "Loop more than twice on name clarification", 
+        "Ask for name before understanding intent",
+        "Assume caller wants to place an order"
+      ],
+      "transitions": {
+        "next_node": "Opening Hours Check",
+        "condition": "intent_identified AND (name_captured OR name_not_required OR name_refused)"
+      }
+    }
+  }
+}
